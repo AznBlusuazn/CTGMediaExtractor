@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CTGMediaExtractor", "CTGMediaExtractor.vbproj", "{2AE160B5-146E-447E-A319-7E28575C730B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2AE160B5-146E-447E-A319-7E28575C730B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AE160B5-146E-447E-A319-7E28575C730B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AE160B5-146E-447E-A319-7E28575C730B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AE160B5-146E-447E-A319-7E28575C730B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72A48AAF-C5D8-4FD2-9E6D-D284E384B7CD}
+	EndGlobalSection
+EndGlobal
