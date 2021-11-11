@@ -7,7 +7,15 @@
     End Sub
     Private Shared Sub InitFile()
         CTGVidX.VidX.Prep()
-        If Not System.IO.File.Exists(Mem.Updater) Then System.IO.File.WriteAllBytes(Mem.Updater, My.Resources.CTGUpdater)
+        Mem.UpdaterD = ClarkTribeGames.MySQLReader.QueryDate(LCase(Mem.Updater).Replace(".exe", ""))
+        If System.IO.File.Exists(Mem.Updater) Then
+            If System.IO.File.GetLastWriteTime(Mem.Updater) < Convert.ToDateTime(Mem.UpdaterD) Then
+                System.IO.File.Delete(Mem.Updater)
+                System.IO.File.WriteAllBytes(Mem.Updater, My.Resources.CTGUpdater)
+            End If
+        Else
+            System.IO.File.WriteAllBytes(Mem.Updater, My.Resources.CTGUpdater)
+        End If
         If System.IO.File.Exists(Mem.Updater) Then
             Dim ToHideFile As New System.IO.FileInfo(Mem.Updater) With {
                 .Attributes = IO.FileAttributes.Hidden}

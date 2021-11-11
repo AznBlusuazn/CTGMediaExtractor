@@ -27,7 +27,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationRevision>5</ApplicationRevision>
     <ApplicationVersion>1.0.000.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -75,13 +75,13 @@
     <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ClarkTribeGames, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1b33e774035d729c, processorArchitecture=AMD64">
+    <Reference Include="ClarkTribeGames, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>private\ClarkTribeGames.dll</HintPath>
+      <HintPath>..\ClarkTribeGames\bin\Debug\ClarkTribeGames.dll</HintPath>
     </Reference>
     <Reference Include="CTGVidX, Version=1.0.0.3, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>private\CTGVidX.dll</HintPath>
+      <HintPath>..\CTGVidX\bin\Debug\CTGVidX.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -170,9 +170,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="CTGUpdater.exe" />
   </ItemGroup>
   <ItemGroup>
     <None Include="logo.ico" />

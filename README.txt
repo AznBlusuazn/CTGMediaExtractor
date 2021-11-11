@@ -1,7 +1,7 @@
 =============================================
 CTGMediaExtractor by Geoff Clark
 PUBLISHED by CLARKTRIBEGAMES LLC
-VERSION ALPHA 1.0.000.0004
+VERSION ALPHA 1.0.000.0005
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS APP @ 
@@ -55,11 +55,15 @@ RELEASE NOTES
 
 [CURRENT UPDATES]
 
+1.0.000.0005 / 2021.11.10
+
+- Updated Updater Method
+
+[PREVIOUS UPDATES]
+
 1.0.000.0004 / 2021.08.24
 
 - Fixed issue with application crashing when pressing Go button
-
-[PREVIOUS UPDATES]
 
 1.0.000.0002 / 2021.08.23
 
