@@ -1,7 +1,7 @@
 =============================================
 CTGMediaExtractor by Geoff Clark
 PUBLISHED by CLARKTRIBEGAMES LLC
-VERSION ALPHA 1.0.000.0005
+VERSION ALPHA 1.0.000.0006
 =============================================
 
 SUPPORT THE DEVELOPMENT OF THIS APP @ 
@@ -55,9 +55,9 @@ RELEASE NOTES
 
 [CURRENT UPDATES]
 
-1.0.000.0005 / 2021.11.10
+1.0.000.0006 / 2021.11.13
 
-- Updated Updater Method
+- Updated and Refined Updater Method
 
 [PREVIOUS UPDATES]
 

@@ -7,14 +7,14 @@
     End Sub
     Private Shared Sub InitFile()
         CTGVidX.VidX.Prep()
-        Mem.UpdaterD = ClarkTribeGames.MySQLReader.QueryDate(LCase(Mem.Updater).Replace(".exe", ""))
+        Mem.UpdaterD = ClarkTribeGames.MySQLReader.Query(LCase(Mem.Updater).Replace(".exe", ""), "d")
         If System.IO.File.Exists(Mem.Updater) Then
             If System.IO.File.GetLastWriteTime(Mem.Updater) < Convert.ToDateTime(Mem.UpdaterD) Then
                 System.IO.File.Delete(Mem.Updater)
-                System.IO.File.WriteAllBytes(Mem.Updater, My.Resources.CTGUpdater)
+                ClarkTribeGames.Updater.GetUpdater()
             End If
         Else
-            System.IO.File.WriteAllBytes(Mem.Updater, My.Resources.CTGUpdater)
+            ClarkTribeGames.Updater.GetUpdater()
         End If
         If System.IO.File.Exists(Mem.Updater) Then
             Dim ToHideFile As New System.IO.FileInfo(Mem.Updater) With {
@@ -42,8 +42,8 @@
         Mem.Current = VersionParts(0) & "." & VersionParts(1) & "." & Action.
             VersionConverter(VersionParts(2), 3) & "." & Action.VersionConverter(VersionParts(3), 4)
         Main.VerLabel.Text = Mem.Current
-        Mem.Available = ClarkTribeGames.MySQLReader.Query(LCase(System.Reflection.Assembly.
-            GetExecutingAssembly.GetName.Name.ToString()))
+        Mem.Available = Mem.UpdaterD = ClarkTribeGames.MySQLReader.Query(LCase(Mem.Updater).Replace(".exe", ""), "v")
+        Mem.UpdaterU = Mem.UpdaterD = ClarkTribeGames.MySQLReader.Query(LCase(Mem.Updater).Replace(".exe", ""), "u")
         If Updater.Checker(Mem.Current, Mem.Available) = True Then
             Dim Answer As Integer = MsgBox("Update " & Mem.Available & " Available!" & vbCrLf & vbCrLf & "Would you like to update now?", vbYesNo + vbExclamation)
             If Answer = vbYes Then Updater.InstallUpdate() Else MsgBox("Please update as soon as possible!")

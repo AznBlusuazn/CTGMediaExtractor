@@ -10,8 +10,9 @@
         Dim pHelp As New ProcessStartInfo With {
             .FileName = ".\" & Mem.Updater,
             .Arguments = "-Path " & Application.ProductName & " -Dir " &
-            (System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().
-            CodeBase)).Substring(6),
+            (System.IO.Path.GetDirectoryName(System.Reflection.Assembly.
+            GetExecutingAssembly().CodeBase)).Substring(6) & " -URL " &
+            Mem.UpdaterU,
             .UseShellExecute = True,
             .WindowStyle = ProcessWindowStyle.Normal
         }
