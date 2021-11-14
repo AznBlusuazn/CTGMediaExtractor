@@ -44,9 +44,9 @@
         Main.VerLabel.Text = Mem.Current
         Mem.Available = Mem.UpdaterD = ClarkTribeGames.MySQLReader.Query(LCase(Mem.Updater).Replace(".exe", ""), "v")
         Mem.UpdaterU = Mem.UpdaterD = ClarkTribeGames.MySQLReader.Query(LCase(Mem.Updater).Replace(".exe", ""), "u")
-        If Updater.Checker(Mem.Current, Mem.Available) = True Then
+        If ClarkTribeGames.Updater.Checker(Mem.Current, Mem.Available) = True Then
             Dim Answer As Integer = MsgBox("Update " & Mem.Available & " Available!" & vbCrLf & vbCrLf & "Would you like to update now?", vbYesNo + vbExclamation)
-            If Answer = vbYes Then Updater.InstallUpdate() Else MsgBox("Please update as soon as possible!")
+            If Answer = vbYes Then ClarkTribeGames.Updater.InstallUpdate(Application.ProductName, Mem.UpdaterU) Else MsgBox("Please update as soon as possible!")
         End If
     End Sub
 End Class

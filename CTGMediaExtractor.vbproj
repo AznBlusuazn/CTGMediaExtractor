@@ -109,7 +109,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Action.vb" />
-    <Compile Include="Updater.vb" />
     <Compile Include="Init.vb" />
     <Compile Include="Mem.vb" />
     <Compile Include="Main.vb">

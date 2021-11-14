@@ -39,7 +39,11 @@
         Action.StartOver()
     End Sub
     Private Sub CRLabel_Click(sender As Object, e As EventArgs) Handles CRLabel.Click
-        Process.Start(Mem.Mail)
+        Try
+            ClarkTribeGames.Web.EM()
+        Catch ex As Exception
+            MsgBox("Something went wrong launching your browser." & vbCrLf & ex.ToString)
+        End Try
     End Sub
 
     Private Sub AboutToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AboutToolStripMenuItem.Click
@@ -56,20 +60,28 @@
     End Sub
 
     Private Sub CheckForUpdatesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckForUpdatesToolStripMenuItem.Click
-        If Updater.Checker(Mem.Current, Mem.Available) = True Then
+        If ClarkTribeGames.Updater.Checker(Mem.Current, Mem.Available) = True Then
             Dim Answer As Integer = MsgBox("Update " & Mem.Available & " Available!" & vbCrLf & vbCrLf & "Would you like to update now?", vbYesNo + vbExclamation)
-            If Answer = vbYes Then Updater.InstallUpdate() Else MsgBox("Please update as soon as possible!")
+            If Answer = vbYes Then ClarkTribeGames.Updater.InstallUpdate(Application.ProductName, Mem.UpdaterU) Else MsgBox("Please update as soon as possible!")
         Else
             MsgBox("No Update Available!")
         End If
     End Sub
 
     Private Sub DonateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DonateToolStripMenuItem.Click
-        Process.Start(Mem.PP)
+        Try
+            ClarkTribeGames.Web.PP()
+        Catch ex As Exception
+            MsgBox("Something went wrong launching your browser." & vbCrLf & ex.ToString)
+        End Try
     End Sub
 
     Private Sub PatreonToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PatreonToolStripMenuItem.Click
-        Process.Start(Mem.PT)
+        Try
+            ClarkTribeGames.Web.PT()
+        Catch ex As Exception
+            MsgBox("Something went wrong launching your browser." & vbCrLf & ex.ToString)
+        End Try
     End Sub
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
