@@ -194,4 +194,27 @@
         Main.Dispose()
         Main.Close()
     End Sub
+    Public Shared Sub UpdaterCheck()
+        If System.IO.File.Exists(Mem.Updater) Then
+            If System.IO.File.GetLastWriteTime(Mem.Updater) < Convert.ToDateTime(Mem.UpdaterD) Then
+                System.IO.File.Delete(Mem.Updater)
+                ClarkTribeGames.Updater.GetUpdater()
+            End If
+        Else
+            ClarkTribeGames.Updater.GetUpdater()
+        End If
+        If System.IO.File.Exists(Mem.Updater) Then
+            Dim ToHideFile As New System.IO.FileInfo(Mem.Updater) With {
+                .Attributes = IO.FileAttributes.Hidden}
+        End If
+    End Sub
+    Public Shared Sub VersionCheck()
+        If ClarkTribeGames.Updater.Checker(Mem.Current, Mem.Available) = True Then
+            Dim Answer As Integer = MsgBox("Update " & Mem.Available & " Available!" & vbCrLf & vbCrLf & "Would you like to update now?",
+                vbYesNo + vbExclamation)
+            If Answer = vbYes Then ClarkTribeGames.Updater.InstallUpdate(Application.ProductName, Mem.UpdaterU) Else MsgBox(
+                "Please update as soon as possible!")
+        End If
+    End Sub
+
 End Class

@@ -60,12 +60,7 @@
     End Sub
 
     Private Sub CheckForUpdatesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CheckForUpdatesToolStripMenuItem.Click
-        If ClarkTribeGames.Updater.Checker(Mem.Current, Mem.Available) = True Then
-            Dim Answer As Integer = MsgBox("Update " & Mem.Available & " Available!" & vbCrLf & vbCrLf & "Would you like to update now?", vbYesNo + vbExclamation)
-            If Answer = vbYes Then ClarkTribeGames.Updater.InstallUpdate(Application.ProductName, Mem.UpdaterU) Else MsgBox("Please update as soon as possible!")
-        Else
-            MsgBox("No Update Available!")
-        End If
+        Action.VersionCheck()
     End Sub
 
     Private Sub DonateToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DonateToolStripMenuItem.Click
